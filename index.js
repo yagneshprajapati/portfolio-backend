@@ -1,7 +1,9 @@
 import cors from 'cors';
 import mongoose from 'mongoose';
 import express from 'express';
-require('dotenv').config();
+
+import dotenv from "dotenv";
+dotenv.config();
 
 import skillRoutes from './routes/skillRoutes.js';
 
