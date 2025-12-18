@@ -1,32 +1,32 @@
-import Skills from "../models/Skills.js";
+import Skills from "../model/skill-model.js";
 
 // post request.
-export const addSkills = async (req, res) => {
+export const c = async (req, res) => {
     const obj = new Skills(req.body);
     await obj.save();
     res.send(obj);
 }
 
 // get request 
-export const readSkills = async (req, res) => {
+export const r = async (req, res) => {
     const arr = await Skills.find(); // array return kare.
     res.json(arr);
 }
 
 // delete request
-export const deleteSkills = async (req, res) =>{
+export const d = async (req, res) =>{
     const obj = await Skills.findByIdAndDelete(req.params.id);
     res.json({ "message" : `success deletedd ${obj} ` })
 }
 
 // put request for updation
-export const updateSkills = async (req, res) =>{
+export const u = async (req, res) =>{
     const updatedObj = await Skills.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json({ "message" : `success updated ${updatedObj} `});
 }
 
 // patch
-export const patchSkills = async (req, res) => {
+export const edit = async (req, res) => {
     const patchObj = await Skills.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json({ "message" : `success updated ${patchObj} `});
 }

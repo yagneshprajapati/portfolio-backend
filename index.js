@@ -11,7 +11,7 @@ dotenv.config();
 import { connectDB } from './db/connectDB.js';
 
 // other files
-import skillRoutes from './routes/skillRoutes.js';
+import skillRoutes from './route/skill-route.js';
 
 // app init.
 const app = express();
@@ -21,7 +21,7 @@ app.use(express.json());
 // await for connection 
 await connectDB();
 
-app.use("/skill", skillRoutes);
+app.use("/api/skill", skillRoutes);
 
 app.listen(2222, ()=>{
     console.log("here is my link := http://localhost:2222");
