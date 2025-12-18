@@ -7,3 +7,27 @@ export const addSkills = async (req, res) => {
     res.send(obj);
 }
 
+// get request 
+export const readSkills = async (req, res) => {
+    const arr = await Skills.find(); // array return kare.
+    res.json(arr);
+}
+
+// delete request
+export const deleteSkills = async (req, res) =>{
+    const obj = await Skills.findByIdAndDelete(req.params.id);
+    res.json({ "message" : `success deletedd ${obj} ` })
+}
+
+// put request for updation
+export const updateSkills = async (req, res) =>{
+    const updatedObj = await Skills.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json({ "message" : `success updated ${updatedObj} `});
+}
+
+// patch
+export const patchSkills = async (req, res) => {
+    const patchObj = await Skills.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json({ "message" : `success updated ${patchObj} `});
+}
+

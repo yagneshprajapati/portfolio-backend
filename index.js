@@ -13,7 +13,6 @@ import { connectDB } from './db/connectDB.js';
 // other files
 import skillRoutes from './routes/skillRoutes.js';
 
-
 // app init.
 const app = express();
 app.use(cors());
